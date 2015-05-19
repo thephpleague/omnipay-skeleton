@@ -1,5 +1,5 @@
 {
-    "name": ":vendor/:package_name",
+    "name": ":vendor/omnipay:package_name",
     "description": ":package_description",
     "keywords": [
         "omnipay",
