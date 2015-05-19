@@ -1,11 +1,11 @@
 {
-    "name": ":vendor/omnipay:package_name",
+    "name": ":vendor/omnipay-:gateway",
     "description": ":package_description",
     "keywords": [
         "omnipay",
-        ":package_name"
+        ":gateway"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/:vendor/omnipay-:gateway",
     "license": "MIT",
     "authors": [
         {
