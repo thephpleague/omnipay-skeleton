@@ -15,7 +15,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
 
     public function getKey()
     {
-        return $this->getParameter('username');
+        return $this->getParameter('key');
     }
 
     public function setKey($value)
