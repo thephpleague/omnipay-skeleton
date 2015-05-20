@@ -32,6 +32,9 @@ class Gateway extends AbstractGateway
         return $this->setParameter('key', $value);
     }
 
+    /**
+     * @return Message\AuthorizeRequest
+     */
     public function authorize(array $parameters = array())
     {
         return $this->createRequest('\Omnipay\Skeleton\Message\AuthorizeRequest', $parameters);

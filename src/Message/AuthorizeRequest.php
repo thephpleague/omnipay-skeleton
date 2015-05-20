@@ -2,6 +2,8 @@
 namespace Omnipay\Skeleton\Message;
 /**
  * Authorize Request
+ *
+ * @method Response send()
  */
 class AuthorizeRequest extends AbstractRequest
 {
