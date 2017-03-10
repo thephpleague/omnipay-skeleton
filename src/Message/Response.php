@@ -2,8 +2,8 @@
 
 namespace Omnipay\Skeleton\Message;
 
-use Omnipay\Common\Message\AbstractResponse;
-use Omnipay\Common\Message\RequestInterface;
+use League\Omnipay\Common\Message\AbstractResponse;
+use League\Omnipay\Common\Message\RequestInterface;
 
 /**
  * Response
@@ -28,4 +28,13 @@ class Response extends AbstractResponse
         }
     }
 
+    /**
+     * Is the response completed?
+     *
+     * @return boolean
+     */
+    public function isCompleted()
+    {
+        return $this->getStatus();
+    }
 }

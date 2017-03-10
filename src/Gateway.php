@@ -2,7 +2,7 @@
 
 namespace Omnipay\Skeleton;
 
-use Omnipay\Common\AbstractGateway;
+use League\Omnipay\Common\AbstractGateway;
 
 /**
  * Skeleton Gateway

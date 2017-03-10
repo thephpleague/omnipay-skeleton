@@ -1,14 +1,14 @@
 <?php
 
-namespace Omnipay\Skeleton\Message;
+namespace Omnipay\Skeleton\Test\Message;
 
-use Omnipay\Common\CreditCard;
-use Omnipay\Tests\TestCase;
+use League\Omnipay\Common\CreditCard;
+use League\Omnipay\Tests\TestCase;
 
 class AuthorizeRequestTest extends TestCase
 {
     /**
-     * @var AuthorizeRequest
+     * @var \Omnipay\Skeleton\Message\AuthorizeRequest
      */
     private $request;
 
@@ -16,7 +16,7 @@ class AuthorizeRequestTest extends TestCase
     {
         parent::setUp();
 
-        $this->request = new AuthorizeRequest($this->getHttpClient(), $this->getHttpRequest());
+        $this->request = new \Omnipay\Skeleton\Message\AuthorizeRequest($this->getHttpClient(), $this->getHttpRequest());
         $this->request->initialize(
             array(
                 'amount' => '10.00',
@@ -39,7 +39,8 @@ class AuthorizeRequestTest extends TestCase
 
         $this->assertSame('abc123', $data['transaction_id']);
 
-        $this->assertSame($card->getExpiryDate('mY'), $data['expire_date']);
-        $this->assertSame('012000', $data['start_date']);
+        $this->assertSame($card->getNumber(), $data['card']['number']);
+        $this->assertSame($card->getExpiryDate('mY'), $data['card']['expire_date']);
+        $this->assertSame($card->getCvv(), $data['card']['cvv']);
     }
 }

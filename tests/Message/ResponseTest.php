@@ -1,22 +1,23 @@
 <?php
 
-namespace Omnipay\Skeleton\Message;
+namespace Omnipay\Skeleton\Test\Message;
 
-use Omnipay\Tests\TestCase;
+use League\Omnipay\Tests\TestCase;
 
 class ResponseTest extends TestCase
 {
     public function testConstruct()
     {
         // response should decode URL format data
-        $response = new Response($this->getMockRequest(), 'example=value&foo=bar');
+        $response = new \Omnipay\Skeleton\Message\Response($this->getMockRequest(), array('example' => 'value', 'foo' => 'bar'));
         $this->assertEquals(array('example' => 'value', 'foo' => 'bar'), $response->getData());
     }
 
     public function testProPurchaseSuccess()
     {
         $httpResponse = $this->getMockHttpResponse('AuthorizeSuccess.txt');
-        $response = new Response($this->getMockRequest(), $httpResponse->getBody());
+
+        $response = new \Omnipay\Skeleton\Message\Response($this->getMockRequest(), json_decode($httpResponse->getBody()->getContents(), true));
 
         $this->assertTrue($response->isSuccessful());
         $this->assertEquals('1234', $response->getTransactionReference());

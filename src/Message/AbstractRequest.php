@@ -2,7 +2,7 @@
 
 namespace Omnipay\Skeleton\Message;
 
-use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
+use League\Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
 
 /**
  * Abstract Request
@@ -26,9 +26,9 @@ abstract class AbstractRequest extends BaseAbstractRequest
     public function sendData($data)
     {
         $url = $this->getEndpoint().'?'.http_build_query($data, '', '&');
-        $httpResponse = $this->httpClient->get($url)->send();
+        $httpResponse = $this->httpClient->get($url);
 
-        return $this->createResponse($httpResponse->getBody());
+        return $this->createResponse(json_decode($httpResponse->getBody()->getContents(), true));
     }
 
     protected function getEndpoint()
