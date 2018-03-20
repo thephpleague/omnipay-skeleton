@@ -7,6 +7,9 @@ use Omnipay\Common\CreditCard;
 
 class GatewayTest extends GatewayTestCase
 {
+    /** @var SkeletonGateway */
+    protected $gateway;
+
     public function setUp()
     {
         parent::setUp();
@@ -15,14 +18,7 @@ class GatewayTest extends GatewayTestCase
 
         $this->options = array(
             'amount' => '10.00',
-            'card' => new CreditCard(array(
-                'firstName' => 'Example',
-                'lastName' => 'User',
-                'number' => '4111111111111111',
-                'expiryMonth' => '12',
-                'expiryYear' => '2016',
-                'cvv' => '123',
-            )),
+            'card' => $this->getValidCard(),
         );
     }
 

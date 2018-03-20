@@ -7,7 +7,7 @@ use Omnipay\Common\AbstractGateway;
 /**
  * Skeleton Gateway
  */
-class Gateway extends AbstractGateway
+class SkeletonGateway extends AbstractGateway
 {
     public function getName()
     {
