@@ -20,10 +20,10 @@ PSRs you support to avoid any confusion with users and contributors.
 
 ## Install
 
-Via Composer
+Instal the gateway using require. Require the `league/omnipay` base package and this gateway.
 
 ``` bash
-$ composer require :vendor/omnipay-:gateway
+$ composer require league/omnipay :vendor/omnipay-:gateway
 ```
 
 ## Usage
