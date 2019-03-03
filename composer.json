@@ -5,7 +5,7 @@
         "omnipay",
         ":gateway"
     ],
-    "homepage": "https://github.com/:vendor/omnipay-:gateway",
+    "homepage": ":package_source_url",
     "license": "MIT",
     "authors": [
         {
@@ -15,10 +15,10 @@
         }
     ],
     "require": {
-        "omnipay/common": "v3.0-alpha.2"
+        "omnipay/common": "^3"
     },
     "require-dev": {
-        "omnipay/tests": "~3.0",
+        "omnipay/tests": "^3",
         "squizlabs/php_codesniffer": "^3",
         "phpro/grumphp": "^0.14"
     },
